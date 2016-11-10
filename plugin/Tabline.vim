@@ -1,7 +1,3 @@
-" Plugin: Tabline
-" Auteur: Morel Alexis
-" Date: 25/11/2013
-
 fu! Firstbufgetlinenr()
     " Récupération du nombre de ligne du premier buffer de l'onglet
     let buflist = tabpagebuflist(tabpagenr())
@@ -33,7 +29,7 @@ fu! Tabline()
         " Récupération de la liste des buffers ouverts dans l'onglet
         let buflist = tabpagebuflist(i)
         " Comptage du nombre de buffer différent ouverts dans l'onglet
-        let oldnr = [0] 
+        let oldnr = [0]
         for nr in buflist
             if oldnr[0] == 0
                 let oldnr[0] = nr
@@ -59,7 +55,7 @@ fu! Tabline()
         let bufname = fnamemodify(bufname(buflist[winnr-1]), ":t")
 
         " Affichage du nombre de buffer ouverts dans la barre d'onglets,
-        " mettre en valeur l'onglet actif dans la barre d'onglets, 
+        " mettre en valeur l'onglet actif dans la barre d'onglets,
         " et affichage du numéro de l'onglet dans la barre d'onglets
         if i == tabpagenr()
             let tabline .= "%#TabBufNr#".bufnr."%".i."T%#TabNrSel# ".i." %#TabLabelSel#"
@@ -111,4 +107,4 @@ augroup END
 " Initialisation de la variable global
 let g:firstbuflinenr = Firstbufgetlinenr()
 " Personnalisation de la barre d'onglets
-set tal=%!Tabline()
+set tabline=%!Tabline()

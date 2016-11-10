@@ -6,9 +6,10 @@ set background=dark
 
 if exists("syntax_on")
   syntax reset
-endif 
+endif
 
 let colors_name = "perso"
+
 
 hi ColorColumn                  guibg=#062725
 hi CursorColumn                 guibg=#0D4441
@@ -20,7 +21,7 @@ hi LineNr         guifg=#FFFFFF guibg=#062725 gui=bold
 hi NonText        guifg=#FFFFFF guibg=#062725
 hi Normal         guifg=#FFFFFF guibg=#093835
 hi StatusLine     guifg=#FFFFFF guibg=#000000 gui=bold
-hi StatusLineNC   guifg=#06505F guibg=#000000 gui=bold 
+hi StatusLineNC   guifg=#06505F guibg=#000000 gui=bold
 hi TabBufNr       guifg=#CD2B82 guibg=#FFFFFF gui=bold
 hi TabLabel       guifg=#000000 guibg=#06505F gui=bold
 hi TabLabelSel    guifg=#FFFFFF guibg=#093835 gui=bold
@@ -32,6 +33,6 @@ hi TabNrSel       guifg=#00FE2A guibg=#093835 gui=bold
 hi VertSplit      guifg=#093835 guibg=#FFFFFF
 
 if has("nvim")
-    hi StatusLine     guifg=#000000 guibg=#FFFFFF gui=bold
-    hi StatusLineNC   guifg=#000000 guibg=#06505F gui=bold 
+    hi StatusLine   guifg=#000000 guibg=#FFFFFF
+    hi StatusLineNC guifg=#000000 guibg=#06505F
 endif

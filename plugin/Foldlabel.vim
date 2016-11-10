@@ -22,7 +22,7 @@ fu! Foldlabel()
         let line .= space
     endif
 
-    let line .= label . " - " 
+    let line .= label . " - "
 
     if (nFoldedLine <= 100000)
         let line .= nFoldedLine . " "

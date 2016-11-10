@@ -1,7 +1,3 @@
-" Plugin: Statusline
-" Auteur: Morel Alexis
-" Date: 21/04/2012.
-
 set statusline=%<
 set statusline+=%f
 set statusline+=\ %r
