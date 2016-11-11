@@ -10,10 +10,6 @@ colorscheme perso
 syntax enable
 filetype plugin indent on
 
-if !has("nvim")
-    set nocompatible
-endif
-
 set autoindent
 " update buffer when file is changed outside of Vim
 set autoread
@@ -49,3 +45,11 @@ set splitright
 set tabstop=4
 set termguicolors
 set wrap
+
+if has("nvim")
+    set viminfo +='100,<50,s10,h,n$VIMCONFIGDIR/nviminfo
+else
+    set nocompatible
+    set viminfo +='100,<50,s10,h,n$VIMCONFIGDIR/viminfo
+endif
+
