@@ -1,8 +1,10 @@
 let $VIMCONFIGDIR = fnamemodify(expand("$MYVIMRC"), ":p:h")
 
-" fix true color in tmux
-let &t_8f = "[38;2;%lu;%lu;%lum"
-let &t_8b = "[48;2;%lu;%lu;%lum"
+if "tmux-256color" ==# $TERM
+    " fix true color in tmux
+    let &t_8f = "[38;2;%lu;%lu;%lum"
+    let &t_8b = "[48;2;%lu;%lu;%lum"
+endif
 
 colorscheme perso
 syntax enable
