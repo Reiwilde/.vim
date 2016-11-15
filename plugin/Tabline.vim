@@ -1,26 +1,26 @@
 fu! Firstbufgetlinenr()
     " Récupération du nombre de ligne du premier buffer de l'onglet
     let buflist = tabpagebuflist(tabpagenr())
-    let firstbuflinenr = len(getbufline(buflist[0], 1, "$"))
+    let firstbuflinenr = len(getbufline(buflist[0], 1, '$'))
 
     return firstbuflinenr
 endf
 
 fu! Tabline()
-    let tabline = "%#TabMargin#"
+    let tabline = '%#TabMargin#'
 
     if g:firstbuflinenr == 1
-        let tabline .= " " . g:firstbuflinenr . "  "
+        let tabline .= ' ' . g:firstbuflinenr . '  '
     elseif g:firstbuflinenr > 99
-        let tabline .= g:firstbuflinenr . " "
+        let tabline .= g:firstbuflinenr . ' '
     else
-        let tabline .= " " . g:firstbuflinenr . " "
+        let tabline .= ' ' . g:firstbuflinenr . ' '
     endif
 
     " Récupération du numéro du dernier onglets ouverts,
     " listage des onglets,
     " parcoure la liste
-    for i in range(tabpagenr("$"))
+    for i in range(tabpagenr('$'))
         " Comptage à partir de 1
         let i += 1
 
@@ -52,42 +52,42 @@ fu! Tabline()
         endfor
 
         " Récupération du nom du buffer actif dans l'onglet
-        let bufname = fnamemodify(bufname(buflist[winnr-1]), ":t")
+        let bufname = fnamemodify(bufname(buflist[winnr-1]), ':t')
 
         " Affichage du nombre de buffer ouverts dans la barre d'onglets,
         " mettre en valeur l'onglet actif dans la barre d'onglets,
         " et affichage du numéro de l'onglet dans la barre d'onglets
         if i == tabpagenr()
-            let tabline .= "%#TabBufNr#".bufnr."%".i."T%#TabNrSel# ".i." %#TabLabelSel#"
+            let tabline .= '%#TabBufNr#'.bufnr.'%'.i.'T%#TabNrSel# '.i.' %#TabLabelSel#'
         else
-            let tabline .= "%#TabBufNr#".bufnr."%".i."T%#TabNr# ".i." %#TabLabel#"
+            let tabline .= '%#TabBufNr#'.bufnr.'%'.i.'T%#TabNr# '.i.' %#TabLabel#'
         endif
 
         " Affichage du nom du buffer actif dans la barre d'onglets
-        if bufname != ""
+        if bufname !=# ''
             let tabline .= bufname
         else
-            let tabline .= "[No Name]"
+            let tabline .= '[No Name]'
         endif
 
         " Affichage d'un '+' dans la barre d'onglets,
         " si une modification non enregistrer a eu lieu dans l'un des buffers
         for bufnr in buflist
-            if getbufvar(bufnr, "&modified")
+            if getbufvar(bufnr, '&modified')
                 if i == tabpagenr()
-                    let tabline .= " %#TabModifiedSel#+"
+                    let tabline .= ' %#TabModifiedSel#+'
                 else
-                    let tabline .= " %#TabModified#+"
+                    let tabline .= ' %#TabModified#+'
                 endif
                 break
             endif
         endfor
 
-        let tabline .= " "
+        let tabline .= ' '
     endfor
 
     " Fin de la barre d'onglets
-    let tabline .= "%#TabLineFill#"
+    let tabline .= '%#TabLineFill#'
 
     return tabline
 endf
