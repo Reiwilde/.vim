@@ -1,5 +1,11 @@
 *.swp
+
 init.vim
+
 viminfo
 nviminfo
-plugged/
+
+backup/*
+!backup/.gitkeep
+
+plugged/*
