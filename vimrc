@@ -1,16 +1,6 @@
 let $VIMCONFIGDIR = fnamemodify(expand('$MYVIMRC'), ':p:h')
 
-call plug#begin()
-    Plug 'Reiwilde/vim-theme'
-call plug#end()
-
-if 'tmux-256color' ==# $TERM
-    " fix true color in tmux
-    let &t_8f = '[38;2;%lu;%lu;%lum'
-    let &t_8b = '[48;2;%lu;%lu;%lum'
-endif
-
-color dracula
+color perso
 
 set autoindent
 " update buffer when file is changed outside of Vim
@@ -46,13 +36,5 @@ set splitbelow
 set splitright
 set tabstop=4
 set termguicolors
-set viminfo ='100,<50,s10,h
 set wrap
-
-if has('nvim')
-    set viminfo+=n$VIMCONFIGDIR/nviminfo
-else
-    set nocompatible
-    set viminfo+=n$VIMCONFIGDIR/viminfo
-endif
 

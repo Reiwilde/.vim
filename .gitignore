@@ -1,6 +1,7 @@
 *.swp
 
 init.vim
+.netrwhist
 
 viminfo
 nviminfo
