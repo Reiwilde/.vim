@@ -1,3 +1,6 @@
 [submodule "pack/perso/start/ctrlp"]
 	path = pack/perso/start/ctrlp
 	url = https://github.com/ctrlpvim/ctrlp.vim.git
+[submodule "pack/perso/start/gruvbox"]
+	path = pack/perso/start/gruvbox
+	url = https://github.com/morhetz/gruvbox.git
