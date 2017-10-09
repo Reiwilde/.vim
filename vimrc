@@ -1,6 +1,6 @@
 let $VIMCONFIGDIR = fnamemodify(expand('$MYVIMRC'), ':p:h')
 
-if 'cygwin' ==# $TERM
+if !empty($CONEMUBUILD)
     set term=xterm
     set t_Co=256
 
@@ -8,8 +8,9 @@ if 'cygwin' ==# $TERM
     let &t_AF="\e[38;5;%dm"
 
     " backspace fix
-    inoremap <Char-0x07F> <BS>
-    nnoremap <Char-0x07F> <BS>
+    cmap <Char-0x07F> <BS>
+    imap <Char-0x07F> <BS>
+    nmap <Char-0x07F> <BS>
 
     " backspace fix in ctrlp
     let g:ctrlp_prompt_mappings = { 'PrtBS()': ['<Char-0x07F>', '<c-h>'] }
@@ -26,7 +27,7 @@ set autoread
 set backspace=2
 set backup
 set backupdir=$VIMCONFIGDIR/backup
-set colorcolumn=101
+set colorcolumn=91
 set cursorline
 set cursorcolumn
 set encoding=utf-8
