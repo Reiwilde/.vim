@@ -18,7 +18,7 @@ endif
 
 syntax on
 
-color gruvbox
+color perso
 
 set autoindent
 " update buffer when file is changed outside of Vim
